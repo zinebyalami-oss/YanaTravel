@@ -10,11 +10,15 @@ class Demande extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nomComplet', 'numTel', 'email', 'message', 
-        'voyage_id', 'client_id'
-    ];
+    'dateDemande',
+    'nomComplet',
+    'message',
+    'nombre_places',   
+    'voyages',         
+    'client_id',
+    'voyage_id'
+];
 
-    // Relations
     public function voyage()
     {
         return $this->belongsTo(Voyage::class);

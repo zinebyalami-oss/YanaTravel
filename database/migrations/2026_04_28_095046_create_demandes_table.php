@@ -8,20 +8,23 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('demandes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomComplet');
-            $table->string('numTel');
-            $table->string('email')->nullable(); // pour les visiteurs sans compte
-            $table->text('message');
-            $table->foreignId('voyage_id')->constrained()->onDelete('cascade');
-            $table->foreignId('client_id')->nullable()->constrained()->onDelete('set null');
-            $table->timestamps();
+        Schema::table('demandes', function (Blueprint $table) {
+          
+            $table->dropColumn(['numTel', 'email']);
+            
+            $table->integer('nombre_places')->default(1)->after('message');
+            
+            $table->string('voyages')->after('nombre_places');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('demandes');
+        Schema::table('demandes', function (Blueprint $table) {
+            $table->string('numTel')->after('nomComplet');
+            $table->string('email')->nullable()->after('numTel');
+            
+            $table->dropColumn(['nombre_places', 'voyages']);
+        });
     }
 };

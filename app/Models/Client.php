@@ -2,30 +2,45 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Client extends Model
+class Client extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
 
     protected $table = 'clients';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'CIN';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     protected $fillable = [
-        'cin', 'nomClient', 'prenomClient', 
+        'CIN', 'nomClient', 'prenomClient',
         'telClient', 'emailClient', 'passwordClient'
     ];
-    protected $hidden = ['passwordClient'];
+
+    protected $hidden = [
+        'passwordClient',
+    ];
+
+    public function getAuthPassword()
+    {
+        return $this->passwordClient;
+    }
+
+    public function getEmailForVerification()
+    {
+        return $this->emailClient;
+    }
 
     // Relations
     public function demandes()
     {
-        return $this->hasMany(Demande::class, 'client_id');
+        return $this->hasMany(Demande::class, 'client_id', 'CIN');
     }
 
     public function favoris()
     {
-        return $this->belongsToMany(Voyage::class, 'client_voyage_favoris', 'client_id', 'voyage_id')
-                    ->withTimestamps();
+        return $this->belongsToMany(Voyage::class, 'favoris', 'client_id', 'voyage_id');
     }
 }
