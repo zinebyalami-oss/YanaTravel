@@ -11,6 +11,10 @@ return [
             'driver' => 'session',
             'provider' => 'clients',
         ],
+        'filament' => [
+            'driver' => 'session',
+            'provider' => 'clients',
+        ],
     ],
 
     'providers' => [
