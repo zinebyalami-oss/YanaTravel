@@ -124,7 +124,6 @@
         </div>
     </div>
 
-    {{-- Mission, Vision, Valeurs --}}
     <div class="row g-4 mt-4">
         <div class="col-md-4" data-aos="zoom-in">
             <div class="mission-card">
@@ -155,7 +154,6 @@
     </div>
 </div>
 
-{{-- Section chiffres clés --}}
 <div class="stats-about text-center">
     <div class="container">
         <h2 class="text-white mb-5" data-aos="fade-up">📊 Chiffres clés</h2>
@@ -181,7 +179,7 @@
 </div>
 
 <div class="container">
-    {{-- Pourquoi nous choisir ? --}}
+   
     <h2 class="section-title" data-aos="fade-right">🌟 Pourquoi choisir Yana Travel ?</h2>
     <div class="row g-4 mb-5">
         <div class="col-md-4" data-aos="flip-up">
@@ -207,7 +205,6 @@
         </div>
     </div>
 
-    {{-- Témoignages --}}
     <h2 class="section-title" data-aos="fade-left">💬 Ce qu'ils disent de nous</h2>
     <div class="row g-4 mb-5">
         <div class="col-md-4" data-aos="fade-up">

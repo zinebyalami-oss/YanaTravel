@@ -14,7 +14,6 @@ class Voyage extends Model
         'duree', 'image', 'type_voyage_id'
     ];
 
-    // Relations
     public function type()
     {
         return $this->belongsTo(TypeVoyage::class, 'type_voyage_id');

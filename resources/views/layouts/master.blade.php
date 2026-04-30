@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Yana Travel - @yield('title', 'Agence de voyage')</title>
 
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon"  href="/images/logo.jpg">
 
     <style>
         * {
@@ -30,7 +28,6 @@
             background-color: #f8f9fa;
         }
 
-        /* ========== TOPBAR ========== */
         .topbar {
             background: #0a2b44;
             color: white;
@@ -49,7 +46,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* ========== NAVBAR ========== */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -86,7 +82,6 @@
             width: 100%;
         }
 
-        /* ========== HERO SECTION ========== */
         .hero {
             position: relative;
             background: linear-gradient(135deg, #0b2b44 0%, #123e60 100%);
@@ -146,7 +141,6 @@
             }
         }
 
-        /* ========== CARDS ========== */
         .card-trip {
             background: white;
             border-radius: 24px;
@@ -178,7 +172,6 @@
             display: inline-block;
         }
 
-        /* ========== SECTION TITLE ========== */
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -198,7 +191,6 @@
             border-radius: 4px;
         }
 
-        /* ========== STATS SECTION ========== */
         .stats-section {
             background: linear-gradient(115deg, #0b2b44, #134b6b);
             color: white;
@@ -211,7 +203,6 @@
             color: #ffb347;
         }
 
-        /* ========== FOOTER ========== */
         .footer {
             background: #0a1c2a;
             color: #ccc;
@@ -240,7 +231,6 @@
             transform: translateY(-3px);
         }
 
-        /* ========== ANIMATIONS ========== */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }

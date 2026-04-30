@@ -24,7 +24,6 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Récupérer le voyage sélectionné
         $voyage = Voyage::find($request->voyage_id);
 
         Demande::create([
@@ -32,7 +31,7 @@ class ContactController extends Controller
             'nomComplet' => $request->nomComplet,
             'message' => $request->message,
             'nombre_places' => $request->nombre_places,
-            'voyages' => $voyage->destination . ' - ' . $voyage->type->nomType, // Nom du voyage + type
+            'voyages' => $voyage->destination . ' - ' . $voyage->type->nomType, 
             'client_id' => Auth::check() ? Auth::user()->CIN : null,
             'voyage_id' => $request->voyage_id,
         ]);

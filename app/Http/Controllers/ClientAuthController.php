@@ -15,22 +15,33 @@ class ClientAuthController extends Controller
         return view('auth.login');
     }
 
-    // Traiter la connexion
+    // Traiter la connexion (Version corrigée)
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'emailClient' => 'required|email',
             'passwordClient' => 'required',
         ]);
 
-        if (Auth::attempt([
-            'emailClient' => $request->emailClient,
-            'password' => $request->passwordClient
-        ])) {
+        // Chercher l'utilisateur par emailClient
+        $user = Client::where('emailClient', $request->emailClient)->first();
+
+        // Vérifier si l'utilisateur existe et le mot de passe est correct
+        if ($user && Hash::check($request->passwordClient, $user->passwordClient)) {
+            Auth::login($user);
+            
+            // Redirection spéciale pour l'admin (utilisation de 'to' au lieu de 'route')
+            if ($user->email === 'agence.yanatravel@gmail.com') {
+                return redirect()->to('/admin/dashboard')->with('success', 'Bienvenue Admin !');
+            }
+            
+            // Redirection normale pour les clients
             return redirect()->route('home')->with('success', 'Bienvenue !');
         }
 
-        return back()->withErrors(['emailClient' => 'Email ou mot de passe incorrect.']);
+        return back()->withErrors([
+            'emailClient' => 'Email ou mot de passe incorrect.',
+        ]);
     }
 
     // Afficher formulaire d'inscription

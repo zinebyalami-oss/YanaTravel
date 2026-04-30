@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-{{-- Hero Section --}}
+
 <div class="hero">
     <div class="overlay"></div>
     <div class="container content">
@@ -12,7 +12,7 @@
 </div>
 
 <div class="container mt-5 pt-4">
-    {{-- Voyages Internationaux --}}
+  
     <h2 class="section-title" data-aos="fade-right">🌍 Voyages Internationaux</h2>
     <div class="row">
         @foreach ($voyages->where('type_voyage_id', 2) as $voyage)
@@ -30,7 +30,6 @@
         @endforeach
     </div>
 
-    {{-- Voyages Nationaux --}}
     <h2 class="section-title mt-5" data-aos="fade-left">🇲🇦 Voyages Nationaux</h2>
     <div class="row">
         @foreach ($voyages->where('type_voyage_id', 1) as $voyage)
@@ -48,7 +47,6 @@
         @endforeach
     </div>
 
-    {{-- Omra --}}
     <h2 class="section-title mt-5" data-aos="fade-right">🕋 Omra</h2>
     <div class="row">
         @foreach ($voyages->where('type_voyage_id', 3) as $voyage)
@@ -67,7 +65,6 @@
     </div>
 </div>
 
-{{-- Section statistiques --}}
 <div class="stats-section text-center">
     <div class="container">
         <div class="row g-4">
@@ -92,7 +89,7 @@
 </div>
 
 <script>
-    // Compteurs animés
+  
     const counters = document.querySelectorAll('.count-up');
     counters.forEach(counter => {
         const updateCount = () => {

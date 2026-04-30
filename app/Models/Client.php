@@ -10,9 +10,9 @@ class Client extends Authenticatable
     use Notifiable;
 
     protected $table = 'clients';
-    protected $primaryKey = 'id';  // ⬅️ Changé de 'CIN' à 'id'
-    public $incrementing = true;    // ⬅️ Changé à true
-    protected $keyType = 'int';     // ⬅️ Changé à 'int'
+    protected $primaryKey = 'id';  
+    public $incrementing = true;    
+    protected $keyType = 'int';   
 
     protected $fillable = [
         'CIN', 
@@ -28,28 +28,24 @@ class Client extends Authenticatable
         'passwordClient',
     ];
 
-    // ⬇️ Identifiant pour l'auth (email)
     public function getAuthIdentifierName()
     {
         return 'email';
     }
 
-    // ⬇️ Mot de passe
     public function getAuthPassword()
     {
         return $this->passwordClient;
     }
 
-    // ⬇️ Pour la vérification d'email
     public function getEmailForVerification()
     {
         return $this->email;
     }
 
-    // Relations
     public function demandes()
     {
-        return $this->hasMany(Demande::class, 'client_id', 'id');  // ⬅️ Changé
+        return $this->hasMany(Demande::class, 'client_id', 'id');  
     }
 
     public function favoris()

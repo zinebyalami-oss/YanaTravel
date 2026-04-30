@@ -125,7 +125,7 @@
 
 <div class="container mb-5">
     <div class="row g-4">
-        {{-- Informations de contact --}}
+  
         <div class="col-lg-5" data-aos="fade-right">
             <div class="contact-card">
                 <div class="contact-icon">
@@ -172,7 +172,6 @@
             </div>
         </div>
 
-        {{-- Formulaire de contact --}}
         <div class="col-lg-7" data-aos="fade-left">
             <div class="contact-card">
                 <div class="contact-icon" style="background: linear-gradient(135deg, #0b2b44, #134b6b);">
@@ -231,7 +230,6 @@
         </div>
     </div>
 
-    {{-- Carte Google Maps --}}
     <div class="map-container" data-aos="zoom-in-up" data-aos-delay="100">
         <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.454105648483!2d-4.987480684788129!3d34.01776928061702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9f8b6a1c2b0d3b%3A0x8e2f9c1e5b6c7d8a!2sBUREAU%20YASSINE%20N%2083%20AV%20MLY%20RACHID!5e0!3m2!1sfr!2sma!4v1690000000000!5m2!1sfr!2sma" 

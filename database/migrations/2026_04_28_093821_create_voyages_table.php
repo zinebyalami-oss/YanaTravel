@@ -14,7 +14,7 @@ return new class extends Migration
             $table->decimal('prix', 10, 2);
             $table->text('description');
             $table->integer('duree');
-            $table->string('image')->nullable(); // ⬅️ Hadi hiya
+            $table->string('image')->nullable(); 
             $table->foreignId('type_voyage_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

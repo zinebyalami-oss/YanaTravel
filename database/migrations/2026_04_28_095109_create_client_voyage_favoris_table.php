@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->foreignId('voyage_id')->constrained()->onDelete('cascade');
-            $table->unique(['client_id', 'voyage_id']); // Empêche les doublons
+            $table->unique(['client_id', 'voyage_id']);
             $table->timestamps();
         });
     }
